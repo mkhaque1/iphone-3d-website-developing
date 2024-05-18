@@ -129,5 +129,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions, feel free to reach out at your-email@example.com.
 
 ---
-##live-test: https://react-thressjs-3d-project-6ke5kt16j-mkhaque1s-projects.vercel.app/
+##live-test: https://react-3d-website-threejs.vercel.app/
 Thank you for checking out this project! Happy coding! 🚀
