@@ -8,7 +8,7 @@ function SoundSection() {
     <section className="sound-section wrapper bg-black">
       <div className="body">
         <div className="sound-section-content lg:flex lg:gap-5 justify-between sm:flex sm:flex-wrap">
-          <div className="w-[30%] min-[320px]:w-[50%] min-[320px]:ml-28  mt-20">
+          <div className="lg:w-[30%] min-[320px]:w-[50%] min-[320px]:ml-28  mt-20">
             <img src={img} alt="" />
           </div>
           <div className="content">
