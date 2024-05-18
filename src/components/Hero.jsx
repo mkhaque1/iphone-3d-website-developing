@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import iphoneLogo from "../assets/images/iphone-15.jpg";
 import Button from "./Button";
 import iphone from "../assets/images/iphone-hand.png";
-import AnimatedBlub from "./animatedBlub";
+import AnimatedBlub from "./AnimatedBlub";
 import { motion } from "framer-motion";
 
 function Hero() {
