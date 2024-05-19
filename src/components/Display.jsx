@@ -10,7 +10,7 @@ function Display() {
     <section className="display-section wrapper">
       <h2 className="title"> Awesome</h2>
       <motion.p
-        initial={{ opacity: 0, x: -200 }}
+        initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 2, type: "spring" }}
