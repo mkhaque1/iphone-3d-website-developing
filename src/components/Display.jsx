@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
-import Button from "./Button";
 import Iphone from "./Iphone";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Float } from "@react-three/drei";
+import { OrbitControls, Float, SpotLight } from "@react-three/drei";
 import Popup from "./Popup";
 import { motion } from "framer-motion";
 
@@ -29,6 +28,13 @@ function Display() {
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={1} />
           <directionalLight position={[-10, -10, 5]} intensity={2} />
+          <SpotLight
+            intensity={1}
+            angle={0.1}
+            penumbra={1}
+            position={[10, 15, 10]}
+            castShadow
+          />
           <pointLight position={[-10, -10, -10]} intensity={1} />
           <directionalLight position={[-2, 5, 12]} />
           <Suspense fallback={null}>
@@ -40,7 +46,7 @@ function Display() {
               floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
               floatingRange={[0, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
             >
-              <Iphone />
+              <Iphone customColor={{ Body: "#c1d3b5" }} />
             </Float>
           </Suspense>
         </Canvas>

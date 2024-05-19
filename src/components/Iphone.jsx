@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import React, { useRef, useState } from "react";
+import { useGLTF, useTexture } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
 
 export function Model(props) {
   const group = useRef(); // Create a reference to the group
@@ -45,15 +46,17 @@ export function Model(props) {
             <mesh
               geometry={nodes.Body_Bezel_0.geometry}
               material={materials.Bezel}
+              material-color={props.customColor.Body}
             />
             <mesh
               geometry={nodes.Body_Body_0.geometry}
               material={materials.Body}
+              material-color={props.customColor.Body}
             />
             <mesh
               geometry={nodes.Body_Wallpaper_0.geometry}
               material={materials.Wallpaper}
-            />
+            ></mesh>
             <mesh
               geometry={nodes.Body_Camera_Glass_0.geometry}
               material={materials.Camera_Glass}
@@ -61,6 +64,7 @@ export function Model(props) {
             <mesh
               geometry={nodes.Body_Lens_0.geometry}
               material={materials.Lens}
+              material-color={props.customColor.Body}
             />
             <mesh
               geometry={nodes.Body_Material_0.geometry}
@@ -85,6 +89,7 @@ export function Model(props) {
             <mesh
               geometry={nodes.Body001_Screen_Glass_0.geometry}
               material={materials.Screen_Glass}
+              material-color={props.customColor.Body}
             />
             <mesh
               geometry={nodes.Button_Frame_0.geometry}
@@ -101,6 +106,7 @@ export function Model(props) {
             <mesh
               geometry={nodes.Camera001_Body_0.geometry}
               material={materials.Body}
+              material-color={props.customColor.Body}
             />
             <mesh
               geometry={nodes.Camera001_Gray_Glass_0.geometry}
