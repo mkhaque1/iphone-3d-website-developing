@@ -1,16 +1,29 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Button from "./Button";
-import { motion } from "framer-motion";
-import img from "../assets/images/iphone01.png";
+import { motion, transform } from "framer-motion";
+import AnimatedBlub from "./AnimatedBlub";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
 function SoundSection() {
   return (
     <section className="sound-section wrapper bg-black">
       <div className="body">
         <div className="sound-section-content lg:flex lg:gap-5 justify-between sm:flex sm:flex-wrap">
-          <div className="lg:w-[30%] min-[320px]:w-[50%] min-[320px]:ml-28  mt-20">
-            <img src={img} alt="" />
-          </div>
+          <motion.div
+            initial={{ x: 20 }}
+            animate={{ x: 0 }}
+            className="lg:w-[30%] min-[320px]:hidden lg:block mt-10"
+          >
+            <Canvas className="canvas">
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[-2, 5, 2]} />
+              <Suspense fallback={null}>
+                <AnimatedBlub />
+              </Suspense>
+            </Canvas>
+          </motion.div>
           <div className="content">
             <h2 className="title">New Sound System</h2>
             <motion.p

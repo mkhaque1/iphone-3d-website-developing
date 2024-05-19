@@ -1,15 +1,14 @@
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import iphoneLogo from "../assets/images/iphone-15.jpg";
 import Button from "./Button";
 import iphone from "../assets/images/iphone-hand.png";
 import AnimatedBlub from "./AnimatedBlub";
 import { motion } from "framer-motion";
+import LottieAnimation from "./LottieAnimation";
 
 function Hero() {
   const handleLearnMore = () => {
-    const element = document.querySelector(".sound-section");
+    const element = document.querySelector(".display-section");
     window.scrollTo({
       top: element?.getBoundingClientRect().top,
       left: 0,
@@ -22,14 +21,18 @@ function Hero() {
       <h2 className="title">New phone is the town</h2>
       <img src={iphoneLogo} className="logo" alt="" />
       <motion.p
-        initial={{ x: 20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 2, type: "spring" }}
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 2,
+          type: "spring",
+        }}
         className="text"
       >
         Dynamic Island
       </motion.p>
-      <span className="description">
+      <span className="description text-center">
         Erhalte für dein neues iPhone 15 eine Gutschrift von 150 € bis 770 €
       </span>
       <ul className="links">
@@ -45,19 +48,16 @@ function Hero() {
       <div className="flex w-full gap-10 justify-center flex-end">
         <img className="iphone-img" src={iphone} alt="" />
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1 }}
+          initial={{ opacity: 0, y: -200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 2,
+            type: "spring",
+          }}
           className=" lg:mr-[30%] sm:mr-0"
         >
-          <Canvas className="canvas">
-            <OrbitControls enableZoom={false} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[-2, 5, 2]} />
-            <Suspense fallback={null}>
-              <AnimatedBlub />
-            </Suspense>
-          </Canvas>
+          <LottieAnimation />
         </motion.div>
       </div>
     </main>

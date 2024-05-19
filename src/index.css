@@ -456,7 +456,8 @@ nav .link-styled {
   }
 
   .sound-section.wrapper {
-    height: 100vh;
+    margin-top: 100px;
+    height: 50vh;
   }
 
   .sound-section .content {
@@ -467,5 +468,5 @@ nav .link-styled {
 .canvas {
   position: relative;
   height: 600px !important;
-  z-index: 999;
+  margin-top: 50px;
 }

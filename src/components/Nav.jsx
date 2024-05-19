@@ -12,7 +12,7 @@ function Nav() {
           <motion.ul
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, staggerChildren: 0.2 }}
+            transition={{ delay: 3, duration: 1, staggerChildren: 0.2 }}
             className="list-styled"
           >
             <motion.li
@@ -35,9 +35,14 @@ function Nav() {
             ].map((item, index) => (
               <motion.li
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                initial={{ opacity: 0, x: -200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.2,
+                  type: "spring",
+                }}
                 className="nav-item"
               >
                 <a href="#" className={`link-styled`}>
