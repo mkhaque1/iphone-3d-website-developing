@@ -4,6 +4,7 @@ import { motion, transform } from "framer-motion";
 import AnimatedBlub from "./AnimatedBlub";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import LogoAnimation from "./LogoAnimation";
 
 function SoundSection() {
   return (
@@ -51,6 +52,7 @@ function SoundSection() {
             </ul>
           </div>
         </div>
+        <LogoAnimation />
       </div>
     </section>
   );

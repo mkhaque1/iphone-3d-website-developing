@@ -11,6 +11,7 @@ function App() {
       <Loader />
       <Nav />
       <Hero />
+
       <SoundSection />
       <Display />
     </div>
