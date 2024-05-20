@@ -17,7 +17,7 @@ function LogoAnimation() {
         speed={25}
         pauseOnHover
       >
-        <div className=" lg:flex lg:justify-center lg:gap-10 min-[320px]:gap-4">
+        <div className=" lg:flex min-[320px]:flex min-[320px]:justify-center lg:justify-center lg:gap-10 min-[320px]:gap-4">
           <img className=" w-16 h-12" src={img1} alt="" />
           <img className=" w-16 h-12" src={img2} alt="" />
           <img className=" w-16 h-12" src={img3} alt="" />
