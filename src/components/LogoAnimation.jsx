@@ -13,11 +13,11 @@ function LogoAnimation() {
         gradient
         gradientColor="#000"
         direction="right"
-        gradientWidth={400}
+        gradientWidth={300}
         speed={25}
         pauseOnHover
       >
-        <div className=" flex justify-center gap-10">
+        <div className=" lg:flex lg:justify-center lg:gap-10 min-[320px]:gap-4">
           <img className=" w-16 h-12" src={img1} alt="" />
           <img className=" w-16 h-12" src={img2} alt="" />
           <img className=" w-16 h-12" src={img3} alt="" />
